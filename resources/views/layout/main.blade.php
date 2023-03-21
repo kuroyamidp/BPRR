@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...">
 </head>
 <style>
     .navbar {
@@ -45,6 +46,10 @@
         border-bottom: solid black;
     }
 
+    .lineee {
+        border-right: solid black;
+    }
+
     .image-container {
         display: flex;
         justify-content: space-between;
@@ -53,19 +58,40 @@
 
     .linee {
         border-right: 1px solid #cccccc;
-        width: 120px;
-        height: 100px;
+        width: auto;
+        height: 70px;
         padding: 10px;
     }
 
     .text {
-        line-height: 1.5em;
-        text-size-adjust: 1px;
-        font-size: small;
-        padding: 5px;
+        line-height: 1.3em;
+        text-size-adjust: 1.2px;
+        font-size: 13px;
+        padding: 2px;
     }
-    .background{
-        background-color: #eeeee8 ;
+
+    .background {
+        background-color: #eeeee8;
+    }
+
+    .primer {
+        width: 50%;
+        height: auto;
+        display: flex;
+        border-right: 1px solid #cccccc;
+    }
+
+    .image-containerr {
+        display: flex;
+
+        padding-right: 5px;
+    }
+
+    .prime {
+        margin: 5px;
+        width: 11%;
+        height: auto;
+        object-fit: cover;
     }
 </style>
 
@@ -82,7 +108,7 @@
                             <a class="nav-link active" href="#">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BPR</a>
+                            <a class="nav-link" href="{{ route('bpr.index') }}">BPR</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">BANK UMUN</a>
@@ -105,6 +131,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">UMKM</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('bpr.index') }}">TAMBAH</a>
+                        </li>
+                     
+
                         <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown link
@@ -121,7 +152,8 @@
     </div>
     </nav>
     <div class="line"></div>
-    @yield('container')
+   @yield('container')
+   @include('inc.footer')
 </body>
 
 </html>
