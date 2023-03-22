@@ -12,7 +12,7 @@ class LkmController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.lkm.lkm');
     }
 
     /**

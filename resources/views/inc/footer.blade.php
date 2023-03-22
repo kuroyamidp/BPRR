@@ -51,15 +51,15 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Bpr</a></li>
-                        <li><a href="#">Bank Umum</a></li>
-                        <li><a href="#">LKM</a></li>
-                        <li><a href="#">Koperasi</a></li>
-                        <li><a href="#">Investasi</a></li>
-                        <li><a href="#">Bisnis</a></li>
-                        <li><a href="#">Industri</a></li>
-                        <li><a href="#">Umkm</a></li>
+                        <li><a href="{{ route('home.index') }}">Home</a></li>
+                        <li><a href="{{ route('bpr.index') }}">Bpr</a></li>
+                        <li><a href="{{ route('bankumum.index') }}">Bank Umum</a></li>
+                        <li><a href="{{ route('lkm.index') }}">LKM</a></li>
+                        <li><a href="{{ route('koperasi.index') }}">Koperasi</a></li>
+                        <li><a href="{{ route('investasi.index') }}">Investasi</a></li>
+                        <li><a href="{{ route('bisnis.index') }}">Bisnis</a></li>
+                        <li><a href="{{ route('industri.index') }}">Industri</a></li>
+                        <li><a href="{{ route('umkm.index') }}">Umkm</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">

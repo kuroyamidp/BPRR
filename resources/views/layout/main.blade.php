@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...">
 </head>
@@ -105,34 +106,36 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">HOME</a>
+                            <a class="nav-link active" href="{{ route('home.index') }}">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('bpr.index') }}">BPR</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BANK UMUN</a>
+                            <a class="nav-link" href="{{ route('bankumum.index') }}">BANK UMUN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">LKM</a>
+                            <a class="nav-link" aria-current="page" href="{{ route('lkm.index') }}">LKM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">KOPERASI</a>
+                            <a class="nav-link" href="{{ route('koperasi.index') }}">KOPERASI</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">INVESTASI</a>
+                            <a class="nav-link" href="{{ route('investasi.index') }}">INVESTASI</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">BISNIS</a>
+                            <a class="nav-link" aria-current="page" href="{{ route('bisnis.index') }}">BISNIS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">INDUSTRI</a>
+                            <a class="nav-link" href="{{ route('industri.index') }}">INDUSTRI</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">UMKM</a>
+                            <a class="nav-link" href="{{ route('umkm.index') }}">UMKM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('bpr.index') }}">TAMBAH</a>
+                        <div class="nav-link">
+                            <a class="fa fa-user fa-lg" href="{{ route('login.index') }}"></a>
+                        </div>
                         </li>
                      
 
@@ -153,6 +156,7 @@
     </nav>
     <div class="line"></div>
    @yield('container')
+   
    @include('inc.footer')
 </body>
 

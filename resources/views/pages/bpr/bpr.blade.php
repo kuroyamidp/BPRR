@@ -5,3 +5,7 @@
 @section('styles')
 
 @section('container')
+
+<h6>Bpr slide</h6>
+
+@endsection

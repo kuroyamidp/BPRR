@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\master;
 
-use App\Models\master\Umkm;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class UmkmController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('pages.umkm.umkm');
+        return view('index');
     }
 
     /**
@@ -34,7 +34,7 @@ class UmkmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Umkm $umkm)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +42,7 @@ class UmkmController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Umkm $umkm)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +50,7 @@ class UmkmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Umkm $umkm)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +58,7 @@ class UmkmController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Umkm $umkm)
+    public function destroy(string $id)
     {
         //
     }

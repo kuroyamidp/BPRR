@@ -1,12 +1,11 @@
 @extends('layout.main');
 
-@section('title','Bank Umum')
+@section('title','Industri')
 
 @section('styles')
 
 @section('container')
 
-<h6>Bank Umum slide</h6>
-
+<h6>Industri slide</h6>
 
 @endsection

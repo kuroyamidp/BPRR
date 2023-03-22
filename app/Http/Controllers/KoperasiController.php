@@ -12,7 +12,7 @@ class KoperasiController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.koperasi.koperasi');
     }
 
     /**

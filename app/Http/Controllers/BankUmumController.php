@@ -12,7 +12,7 @@ class BankUmumController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.bankumum.bankumum');
     }
 
     /**
