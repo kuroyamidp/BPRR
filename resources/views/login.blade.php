@@ -55,21 +55,19 @@
                 <button class="button is-block is-info is-large is-fullwidth">Login</button><br />
                 <p class="subtitle is-5">Login using Social Media</p>
                 <div class="buttons is-centered" style="margin-bottom: 0;">
-                  <a class="button is-medium is-facebook">
+                  <a class="button is-small is-facebook">
                     <span class="icon">
                       <i class="fab fa-facebook-f fa-lg"></i>
                     </span>
                   </a>
-                  <a class="button is-medium is-twitter">
+                  <a class="button is-small is-twitter">
                     <span class="icon">
                       <i class="fab fa-twitter fa-lg"></i>
                     </span>
                   </a>
-                  <a class="button is-medium is-github">
-                    <span class="icon">
-                      <i class="fab fa-github fa-lg"></i>
-                    </span>
-                  </a>
+                  <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.index') }}"> clikc</a>
+                        </li>
                 </div>
               </form>
             </div>

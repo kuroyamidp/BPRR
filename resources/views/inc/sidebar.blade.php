@@ -1,111 +1,158 @@
-<!--  BEGIN SIDEBAR  -->
-<div class="sidebar-wrapper sidebar-theme">
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-	<nav id="sidebar">
-		<div class="shadow-bottom"></div>
-		<ul class="list-unstyled menu-categories" id="accordionExample">
-			<li class="menu">
-				<a href="/home" aria-expanded="false" class="dropdown-toggle">
-					<div class="">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-							<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-							<polyline points="9 22 9 12 15 12 15 22"></polyline>
-						</svg>
-						<span>Dashboard</span>
-					</div>
-				</a>
-			</li>
-			<li class="menu">
-				<a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<div class="">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box">
-							<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-							<polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-							<line x1="12" y1="22.08" x2="12" y2="12"></line>
-						</svg>
-						<span>Master data</span>
-					</div>
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-							<polyline points="9 18 15 12 9 6"></polyline>
-						</svg>
-					</div>
-				</a>
-				<ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
-					<li><a href="/matakuliah"> Mata kuliah</a></li>
-					<li><a href="/ruangkelas"> Ruang kelas</a></li>
-					<li><a href="/progdi"> Progdi </a></li>
-					<li><a href="/dosen"> Dosen </a></li>
-					<li><a href="/mahasiswa"> Mahasiswa </a></li>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-				</ul>
-			</li>
-			<li class="menu">
-				<a href="#app" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<div class="">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu">
-							<rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-							<rect x="9" y="9" width="6" height="6"></rect>
-							<line x1="9" y1="1" x2="9" y2="4"></line>
-							<line x1="15" y1="1" x2="15" y2="4"></line>
-							<line x1="9" y1="20" x2="9" y2="23"></line>
-							<line x1="15" y1="20" x2="15" y2="23"></line>
-							<line x1="20" y1="9" x2="23" y2="9"></line>
-							<line x1="20" y1="14" x2="23" y2="14"></line>
-							<line x1="1" y1="9" x2="4" y2="9"></line>
-							<line x1="1" y1="14" x2="4" y2="14"></line>
-						</svg>
-						<span>Kelas</span>
-					</div>
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-							<polyline points="9 18 15 12 9 6"></polyline>
-						</svg>
-					</div>
-				</a>
-				<ul class="collapse submenu list-unstyled" id="app" data-parent="#accordionExample">
-					<li>
-						<a href="/daftar-kelas"> Semua kelas </a>
-					</li>
-					<li>
-						<a href="/jadwal-kelas"> Jadwal kelas </a>
-					</li>
-					<li>
-						<a href="/jadwalujian"> Jadwal Ujian </a>
-					</li>
-					<li>
-						<a href="/nilaiujian"> Nilai Ujian </a>
-					</li>
-				</ul>
-			</li>
-			<li class="menu">
-				<a href="#users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<div class="">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu">
-							<rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-							<rect x="9" y="9" width="6" height="6"></rect>
-							<line x1="9" y1="1" x2="9" y2="4"></line>
-							<line x1="15" y1="1" x2="15" y2="4"></line>
-							<line x1="9" y1="20" x2="9" y2="23"></line>
-							<line x1="15" y1="20" x2="15" y2="23"></line>
-							<line x1="20" y1="9" x2="23" y2="9"></line>
-							<line x1="20" y1="14" x2="23" y2="14"></line>
-							<line x1="1" y1="9" x2="4" y2="9"></line>
-							<line x1="1" y1="14" x2="4" y2="14"></line>
-						</svg>
-						<span>Data pengguna</span>
-					</div>
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-							<polyline points="9 18 15 12 9 6"></polyline>
-						</svg>
-					</div>
-				</a>
-				<ul class="collapse submenu list-unstyled" id="users" data-parent="#accordionExample">
-					<li>
-						<a href="/user-mahasiswa"> User mahasiswa </a>
-					</li>
-					<li>
-						<a href="/user-dosen"> User Dosen </a>
-					</li>
-			</li>
+	<title>@yield('title')</title>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		var dropdownToggle = document.querySelector('#shortcutDropdown');
+
+		// Initialize the dropdown using Bootstrap's JavaScript
+		var dropdown = new bootstrap.Dropdown(dropdownToggle);
+
+		jQuery(document).ready(function($) {
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		})
+		$(document).ready(function() {
+			$('.dropdown-menu').on('show.bs.dropdown', function() {
+				$('.dashboard').insertAfter($('.dropdown-toggle'));
+			});
+		});
+	</script>
+
+	<style>
+		body {
+			overflow-x: hidden;
+		}
+
+		#sidebar-wrapper {
+			min-height: 100vh;
+			margin-left: -15rem;
+			-webkit-transition: margin .25s ease-out;
+			-moz-transition: margin .25s ease-out;
+			-o-transition: margin .25s ease-out;
+			transition: margin .25s ease-out;
+		}
+
+		#sidebar-wrapper .sidebar-heading {
+			padding: 0.875rem 1.25rem;
+			font-size: 1.2rem;
+		}
+
+		#sidebar-wrapper .list-group {
+			width: 15rem;
+		}
+
+		#page-content-wrapper {
+			min-width: 100vw;
+		}
+
+		.dropdown-menu {
+			position: absolute;
+			z-index: 1000;
+			width: 100%;
+		}
+
+
+		#wrapper.toggled #sidebar-wrapper {
+			margin-left: 0;
+		}
+
+		@media (min-width: 768px) {
+			#sidebar-wrapper {
+				margin-left: 0;
+			}
+
+			#page-content-wrapper {
+				min-width: 0;
+				width: 100%;
+			}
+
+			#wrapper.toggled #sidebar-wrapper {
+				margin-left: -15rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="d-flex" id="wrapper">
+
+		<!-- Sidebar -->
+		<div class="bg-light border-right" id="sidebar-wrapper">
+			<div class="sidebar-heading">Admin</div>
+			<div class="list-group list-group-flush">
+				<div class="dropdown">
+				<a href="{{route('admin.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Dashboard</a>
+					<a class="list-group-item list-group-item-action bg-light dropdown-toggle" href="#" role="button" id="shortcutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+						Master Data
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
+						<li><a class="dropdown-item" href="{{route('bprcrud.index')}}">Bpr</a></li>
+						<li><a class="dropdown-item" href="#">Events</a></li>
+						<li><a class="dropdown-item" href="#">Profile</a></li>
+						<li><a class="dropdown-item" href="#">Status</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Dropdown
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			@yield('container')
+
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+</body>
+
+</html>

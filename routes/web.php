@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Master\BprController;
 use App\Http\Controllers\Master\HomeController;
 use App\Http\Controllers\Master\LoginController;
+use App\Http\Controllers\Master\AdminController;
 use App\Http\Controllers\BankUmumController;
 use App\Http\Controllers\BisnisController;
 use App\Http\Controllers\IndustriController;
@@ -12,6 +13,8 @@ use App\Http\Controllers\InvestasiController;
 use App\Http\Controllers\KoperasiController;
 use App\Http\Controllers\LkmController;
 use App\Http\Controllers\UmkmController;
+
+use App\Http\Controllers\Crud\BprCrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +41,7 @@ Route::resource('koperasi', koperasiController::class);
 Route::resource('lkm', LkmController::class);
 Route::resource('umkm', UmkmController::class);
 Route::resource('bisnis', BisnisController::class);
+Route::resource('admin', AdminController::class);
+
+//Crud
+Route::resource('bprcrud', BprCrudController::class);

@@ -1,9 +1,8 @@
-@include('inc.sidebar');
+@extends('inc.sidebar')
 
-@extends('layout.main');
-
-@section('title','Home')
-
-@section('styles')
+@section('title','Dashboard Admin')
 
 @section('container')
+
+<h6>Ini Admin</h6>
+@endsection

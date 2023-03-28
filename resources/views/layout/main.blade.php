@@ -106,31 +106,31 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('home.index') }}">HOME</a>
+                            <a class="nav-link {{ Request::is('home') ? ' active' : '' }}" href="{{ route('home.index') }}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('bpr.index') }}">BPR</a>
+                            <a class="nav-link {{ Request::is('bpr') ? ' active' : '' }}" href="{{ route('bpr.index') }}">BPR</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('bankumum.index') }}">BANK UMUN</a>
+                            <a class="nav-link {{ Request::is('bankumum') ? ' active' : '' }}" href="{{ route('bankumum.index') }}">BANK UMUN</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('lkm.index') }}">LKM</a>
+                            <a class="nav-link {{ Request::is('lkm') ? ' active' : '' }}" aria-current="page" href="{{ route('lkm.index') }}">LKM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('koperasi.index') }}">KOPERASI</a>
+                            <a class="nav-link {{ Request::is('koperasi') ? ' active' : '' }}" href="{{ route('koperasi.index') }}">KOPERASI</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('investasi.index') }}">INVESTASI</a>
+                            <a class="nav-link {{ Request::is('investasi') ? ' active' : '' }}" href="{{ route('investasi.index') }}">INVESTASI</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('bisnis.index') }}">BISNIS</a>
+                            <a class="nav-link {{ Request::is('bisnis') ? ' active' : '' }}" aria-current="page" href="{{ route('bisnis.index') }}">BISNIS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('industri.index') }}">INDUSTRI</a>
+                            <a class="nav-link {{ Request::is('industri') ? ' active' : '' }}" href="{{ route('industri.index') }}">INDUSTRI</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('umkm.index') }}">UMKM</a>
+                            <a class="nav-link {{ Request::is('umkm') ? ' active' : '' }}" href="{{ route('umkm.index') }}">UMKM</a>
                         </li>
                         <li class="nav-item">
                         <div class="nav-link">

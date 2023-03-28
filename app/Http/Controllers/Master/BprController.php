@@ -26,7 +26,7 @@ class BprController extends Controller
     {
         {
             $data['bpr'] = BprModel::get();
-            return view('pages.dashboard.dashboardadmin', $data);
+            return view('pages.crud.bpr', $data);
         }
     }
 
@@ -51,7 +51,7 @@ class BprController extends Controller
      */
     public function edit(string $id)
     {
-        //
+    
     }
 
     /**
