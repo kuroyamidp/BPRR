@@ -104,10 +104,23 @@
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
 						<li><a class="dropdown-item" href="{{route('bprcrud.index')}}">Bpr</a></li>
-						<li><a class="dropdown-item" href="#">Events</a></li>
-						<li><a class="dropdown-item" href="#">Profile</a></li>
-						<li><a class="dropdown-item" href="#">Status</a></li>
+						<li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Bank Umum</a></li>
+						<li><a class="dropdown-item" href="{{route('lkmcrud.index')}}">Lkm</a></li>
+						<li><a class="dropdown-item" href="{{route('koperasicrud.index')}}">Koperasi</a></li>
+						<li><a class="dropdown-item" href="{{route('investasicrud.index')}}">Investasi</a></li>
+						<li><a class="dropdown-item" href="{{route('bisniscrud.index')}}">Bisnis</a></li>
+						<li><a class="dropdown-item" href="{{route('industricrud.index')}}">Industri</a></li>
+						<li><a class="dropdown-item" href="{{route('umkmcrud.index')}}">Umkm</a></li>
 					</ul>
+					<a class="list-group-item list-group-item-action bg-light dropdown-toggle" href="#" role="button" id="shortcutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+						Manage Berita
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
+						<li><a class="dropdown-item" href="{{route('bprcrud.index')}}">Berita</a></li>
+						<li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Beria Terpopuler</a></li>
+						<li><a class="dropdown-item" href="{{route('lkmcrud.index')}}">Berita Sorotan</a></li>
+					</ul>
+					<a href="{{route('admin.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Iklan</a>
 				</div>
 			</div>
 		</div>
@@ -126,7 +139,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Link</a>

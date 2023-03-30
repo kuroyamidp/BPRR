@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('bprs', function (Blueprint $table) {
             $table->id();
-            $table->text('nama')->default('Bpr');
             $table->text('judul');
             $table->text('deskripsi');
             $table->date('tanggal');
-            $table->text('Gambar');
+            $table->text('gambar');
             $table->timestamps();
         });
     }

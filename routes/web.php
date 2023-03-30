@@ -15,6 +15,13 @@ use App\Http\Controllers\LkmController;
 use App\Http\Controllers\UmkmController;
 
 use App\Http\Controllers\Crud\BprCrudController;
+use App\Http\Controllers\Crud\BankUmumCrudController;
+use App\Http\Controllers\Crud\LkmCrudController;
+use App\Http\Controllers\Crud\KoperasiCrudController;
+use App\Http\Controllers\Crud\InvestasiCrudController;
+use App\Http\Controllers\Crud\BisnisCrudController;
+use App\Http\Controllers\Crud\IndustriCrudController;
+use App\Http\Controllers\Crud\UmkmCrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +52,10 @@ Route::resource('admin', AdminController::class);
 
 //Crud
 Route::resource('bprcrud', BprCrudController::class);
+Route::resource('bankumumcrud', BankUmumCrudController::class);
+Route::resource('lkmcrud', LkmCrudController::class);
+Route::resource('koperasicrud', KoperasiCrudController::class);
+Route::resource('investasicrud', InvestasiCrudController::class);
+Route::resource('bisniscrud', BisnisCrudController::class);
+Route::resource('industricrud', IndustriCrudController::class);
+Route::resource('umkmcrud', UmkmCrudController::class);

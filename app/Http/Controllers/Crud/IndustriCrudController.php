@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Crud;
+namespace App\Http\Controllers\crud;
 
 use App\Http\Controllers\Controller;
-use App\Models\Master\BprModel;
+use App\Models\Master\Industri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use PDF;
-use DateTime;;
+use DateTime;
 
-class BprCrudController extends Controller
+
+class IndustriCrudController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +22,8 @@ class BprCrudController extends Controller
      */
     public function index()
     {
-        $data['bprcrud'] = BprModel::get();
-        return view('crud.bprdata.bprdata',$data);
+        $data['industricrud'] = Industri::get();
+        return view('crud.industridata.industridata',$data);
     }
 
     /**
@@ -32,7 +33,7 @@ class BprCrudController extends Controller
      */
     public function create()
     {
-        return view('crud.bprdata.tambahbprdata');
+        return view('crud.industridata.tambahindustridata');
     }
 
     /**
@@ -56,14 +57,14 @@ class BprCrudController extends Controller
             return Redirect::back()->withErrors($validator);
         }
 
-        BprModel ::create([
+        Industri ::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'tanggal' => Carbon::parse($request->tanggal)->format('Y-m-d'),
             'gambar' => $request->gambar,
         ]);
 
-        return redirect('/bprcrud')->with('success', 'Berhasil tambah data');
+        return redirect('/industricrud')->with('success', 'Berhasil tambah data');
     }
 
     /**
@@ -74,8 +75,8 @@ class BprCrudController extends Controller
      */
     public function show($id)
     {
-        $data['bprcrud'] = BprModel::where('id', $id)->first();
-        return view('crud.bprdata.editbprdata',$data);
+        $data['industricrud'] = Industri::where('id', $id)->first();
+        return view('crud.industridata.editindustridata',$data);
     }
 
     /**
@@ -111,14 +112,14 @@ class BprCrudController extends Controller
             return Redirect::back()->withErrors($validator);
         }
 
-        BprModel::where('id', $id)->update([
+        Industri::where('id', $id)->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'tanggal' => $request->tanggal,
             'gambar' => $request->gambar,
         ]);
 
-        return redirect('/bprcrud')->with('success', 'Berhasil tambah data');
+        return redirect('/industricrud')->with('success', 'Berhasil tambah data');
     }
 
     /**
@@ -129,7 +130,7 @@ class BprCrudController extends Controller
      */
     public function destroy($id)
     {
-        BprModel::where('id', $id)->delete();
-        return redirect('/bprcrud');
+        Industri::where('id', $id)->delete();
+        return redirect('/industricrud');
     }
 }

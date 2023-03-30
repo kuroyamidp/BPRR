@@ -1,6 +1,6 @@
 @extends('inc.sidebar')
 
-@section('title','Bpr Data')
+@section('title','Industri Data')
 
 @section('container')
 <head>
@@ -22,7 +22,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header" style="background-color: white;">
-                <a href="{{Route('bprcrud.create')}}" class="btn btn-primary btn-sm">Tambah</a>
+                <a href="{{Route('industricrud.create')}}" class="btn btn-primary btn-sm">Tambah</a>
                     <!-- Modal -->
                     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -77,7 +77,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($bprcrud as $key => $value)
+                                @foreach($industricrud as $key => $value)
                                     <tr>
                                         <td width="1%">{{$key + 1}}</td>
                                         <td class="text-center">{{$value->judul}}</td>
@@ -86,9 +86,9 @@
                                         <td class="text-center">{{$value->gambar}}</td>
                                         <td class="text-center" style="display: flex; justify-content: center;">
 
-                                            <a href=" {{ route('bprcrud.show', $value->id) }}" class="btn btn-warning mb-1 mr-1 rounded-circle" data-toggle="tooltip" title='Update'><i class="fas fa-edit"></i></a>
+                                            <a href=" {{ route('industricrud.show', $value->id) }}" class="btn btn-warning mb-1 mr-1 rounded-circle" data-toggle="tooltip" title='Update'><i class="fas fa-edit"></i></a>
 
-                                            <form action="{{ route('bprcrud.destroy', $value->id) }}" method="post">
+                                            <form action="{{ route('industricrud.destroy', $value->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button class="btn btn-danger mb-1 mr-1 rounded-circle show_confirm" data-toggle="tooltip" title='Delete' type="submit"><i class="fas fa-trash-alt"></i></button>

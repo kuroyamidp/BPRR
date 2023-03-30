@@ -155,9 +155,12 @@
     </div>
     </nav>
     <div class="line"></div>
+ 
    @yield('container')
-   
+
    @include('inc.footer')
+
+
 </body>
 
 </html>

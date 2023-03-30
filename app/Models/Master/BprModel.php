@@ -12,7 +12,6 @@ class BprModel extends Model
     use HasFactory;
     protected $table = "bprs";
     protected $fillable = [
-        'nama',
         'judul',
         'deskripsi',
         'tanggal',
