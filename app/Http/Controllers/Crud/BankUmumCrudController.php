@@ -43,153 +43,33 @@ class BankUmumCrudController extends Controller
      */
     public function store(Request $request)
     {
-         // if ($request->uid) {
-        //     if ($request->hasFile('file')) {
-        //         $validator = Validator::make($request->all(), [
-        //             'npm' => 'required',
-        //             'nama' => 'required',
-        //             'tanggal_sidang' => 'required',
-        //             'jam' => 'required',
-        //             'file' => 'required'
-        //         ]);
-
-        //         // response error validation
-        //         if ($validator->fails()) {
-        //             return Redirect::back()->withErrors($validator);
-        //         }
-        //         $name = $request->file('file')->getClientOriginalName();
-        //         $filename = time() . '-' . $name;
-        //         $file = $request->file('file');
-        //         $file->move(public_path('Document'), $filename);
-
-        //         DaftarSidangModel::where('id', $request->id)->update([
-        //             'nama' => $request->nama,
-        //             'npm' => $request->npm,
-        //             'tanggal_sidang' => Carbon::parse($request->tanggal_sidang)->format('Y-m-d'),
-        //             'jam' => $request->jam,
-        //             'file' => $filename,
-        //         ]);
-        //         return redirect('/daftarsidang')->with('success', 'Berhasil edit data');
-        //     } else {
-        //         $validator = Validator::make($request->all(), [
-        //             'npm' => 'required',
-        //             'nama' => 'required',
-        //             'tanggal_sidang' => 'required',
-        //             'jam' => 'required',
-        //         ]);
-        //         if ($validator->fails()) {
-        //             return Redirect::back()->withErrors($validator);
-        //         }
-
-        //         DaftarSidangModel::where('id', $request->id)->update([
-        //             'nama' => $request->nama,
-        //             'npm' => $request->npm,
-        //             'tanggal_sidang' => Carbon::parse($request->tanggal_sidang)->format('Y-m-d'),
-        //             'jam' => $request->jam,
-        //         ]);
-        //         return redirect('/daftarsidang')->with('success', 'Berhasil edit data');
-        //     }
-        // } else {
-        //     $validator = Validator::make($request->all(), [
-        //         'npm' => 'required',
-        //         'nama' => 'required',
-        //         'tanggal_sidang' => 'required',
-        //         'jam' => 'required',
-        //         'file' => 'required'
-        //     ]);
-
-        //     // response error validation
-        //     if ($validator->fails()) {
-        //         return Redirect::back()->withErrors($validator);
-        //     }
-        //     if ($request->hasFile('file')) {
-        //         $name = $request->file('file')->getClientOriginalName();
-        //         $filename = time() . '-' . $name;
-        //         $file = $request->file('file');
-        //         $file->move(public_path('Document'), $filename);
-
-        //         DaftarSidangModel::create([
-        //             'nama' => $request->nama,
-        //             'npm' => $request->npm,
-        //             'tanggal_sidang' => Carbon::parse($request->tanggal_sidang)->format('Y-m-d'),
-        //             'jam' => $request->jam,
-        //             'file' => $filename,
-        //         ]);
-        //         return redirect('/daftarsidang')->with('success', 'Berhasil tambah data');
-        //     } else {
-        //         DaftarSidangModel::create([
-        //             'nama' => $request->nama,
-        //             'npm' => $request->npm,
-        //             'tanggal_sidang' => Carbon::parse($request->tanggal_sidang)->format('Y-m-d'),
-        //             'jam' => $request->jam,
-        //         ]);
-        //         return redirect('/daftarsidang')->with('success', 'Berhasil tambah data');
-        //     }
-        // }
-
         $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
-            'gambar' =>'required',
-
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // response error validation
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         }
+
+        $image = $request->file('gambar');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+        $path = public_path('/img');
+
+        $image->move($path, $imageName);
 
         BankUmum::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'tanggal' => Carbon::parse($request->tanggal)->format('Y-m-d'),
-            'gambar' => $request->gambar,
+            'gambar' => $imageName,
         ]);
 
-        return redirect('/bankumumcrud')->with('success', 'Berhasil tambah data');
-     // $directory = public_path('excel');
-     // if (!is_dir($directory)) {
-     //     mkdir($directory, 0755, true);
-     // }
-
-     // if ($request->hasFile('file')) {
-     //     $name = $request->file('file')->getClientOriginalName();
-     //     $filename = time() . '-' . $name;
-     //     $file = $request->file('file');
-
-     //     $file->move($directory, $filename);
-
-     //     DaftarSidangModel::create([
-     //         'nama' => $request->nama,
-     //         'npm' => $request->npm,
-     //         'tanggal_sidang' => Carbon::parse($request->tanggal_sidang)->format('Y-m-d'),
-     //         'jam' => $request->jam,
-     //         'file' => $filename,
-     //     ]);
-     // } else {
-     //     $validator = Validator::make($request->all(), [
-     //         'npm' => 'required',
-     //         'nama' => 'required',
-     //         'tanggal_sidang' => 'required',
-     //         'jam' => 'required',
-     //     ]);
-
-     //     if ($validator->fails()) {
-     //         return Redirect::back()->withErrors($validator);
-     //     }
-
-     //     DaftarSidangModel::create([
-     //         'nama' => $request->nama,
-     //         'npm' => $request->npm,
-     //         'tanggal_sidang' => Carbon::parse($request->tanggal_sidang)->format('Y-m-d'),
-     //         'jam' => $request->jam,
-     //     ]);
-     // }
-
-     // return redirect('/daftarsidang')->with('success', 'Berhasil tambah data');
+        return redirect('/bprcrud')->with('success', 'Berhasil tambah data');
     }
-
     /**
      * Display the specified resource.
      *

@@ -22,7 +22,7 @@ class BprCrudController extends Controller
     public function index()
     {
         $data['bprcrud'] = BprModel::get();
-        return view('crud.bprdata.bprdata',$data);
+        return view('crud.bprdata.bprdata', $data);
     }
 
     /**
@@ -43,24 +43,29 @@ class BprCrudController extends Controller
      */
     public function store(Request $request)
     {
-          $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'judul' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
-            'gambar' =>'required',
-
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // response error validation
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         }
 
-        BprModel ::create([
+        $image = $request->file('gambar');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+        $path = public_path('/img');
+
+        $image->move($path, $imageName);
+
+        BprModel::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'tanggal' => Carbon::parse($request->tanggal)->format('Y-m-d'),
-            'gambar' => $request->gambar,
+            'gambar' => $imageName,
         ]);
 
         return redirect('/bprcrud')->with('success', 'Berhasil tambah data');
@@ -75,7 +80,7 @@ class BprCrudController extends Controller
     public function show($id)
     {
         $data['bprcrud'] = BprModel::where('id', $id)->first();
-        return view('crud.bprdata.editbprdata',$data);
+        return view('crud.bprdata.editbprdata', $data);
     }
 
     /**
@@ -102,7 +107,7 @@ class BprCrudController extends Controller
             'judul' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
-            'gambar' =>'required',
+            'gambar' => 'required',
 
         ]);
 

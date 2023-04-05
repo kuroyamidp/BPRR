@@ -83,7 +83,7 @@
                                         <td class="text-center">{{$value->judul}}</td>
                                         <td class="text-center">{{$value->deskripsi}}</td>
                                         <td class="text-center">{{$value->tanggal}}</td>
-                                        <td class="text-center">{{$value->gambar}}</td>
+                                        <td class="text-center">{{$value->Gambar}}</td>
                                         <td class="text-center" style="display: flex; justify-content: center;">
 
                                             <a href=" {{ route('bprcrud.show', $value->id) }}" class="btn btn-warning mb-1 mr-1 rounded-circle" data-toggle="tooltip" title='Update'><i class="fas fa-edit"></i></a>

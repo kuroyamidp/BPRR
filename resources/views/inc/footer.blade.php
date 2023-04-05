@@ -84,7 +84,7 @@
                     </p>
                 </div>
 
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
                     <h6 class="mb-2 font-weight-bold">Connect With Us :</h6>
 
                     <!-- Facebook -->
@@ -100,10 +100,10 @@
                     <a class="btn btn-primary btn-floating rounded-circle" style="background-color: #ac2bac" href="#!" role="button"><i class="fa fa-instagram"></i></a>
 
                     <!-- Linkedin -->
-                    <a class="btn btn-primary btn-floating rounded-circle m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-primary btn-floating rounded-circle" style="background-color: #0082ca" href="#!" role="button"><i class="fa fa-linkedin"></i></a>
 
                     <!-- Github -->
-                    <a class="btn btn-primary btn-floating rounded-circle m-1" style="background-color: #333333" href="#!" role="button"><i class="fa fa-github"></i></a>
+                    <a class="btn btn-primary btn-floating rounded-circle" style="background-color: #333333" href="#!" role="button"><i class="fa fa-github"></i></a>
                 </div>
 
                 <!--Grid row-->

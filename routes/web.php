@@ -22,6 +22,12 @@ use App\Http\Controllers\Crud\InvestasiCrudController;
 use App\Http\Controllers\Crud\BisnisCrudController;
 use App\Http\Controllers\Crud\IndustriCrudController;
 use App\Http\Controllers\Crud\UmkmCrudController;
+use App\Http\Controllers\Crud\IklanCrudController;
+use App\Http\Controllers\Crud\KategoriBeritaCrudController;
+use App\Http\Controllers\Crud\KategoriIklanCrudController;
+use App\Http\Controllers\Crud\LamanCrudController;
+use App\Http\Controllers\Crud\BeritaSorotanCrudController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +65,8 @@ Route::resource('investasicrud', InvestasiCrudController::class);
 Route::resource('bisniscrud', BisnisCrudController::class);
 Route::resource('industricrud', IndustriCrudController::class);
 Route::resource('umkmcrud', UmkmCrudController::class);
+Route::resource('iklancrud', IklanCrudController::class);
+Route::resource('kategoriberitacrud', KategoriBeritaCrudController::class);
+Route::resource('kategoriiklancrud', KategoriIklanCrudController::class);
+Route::resource('lamancrud', LamanCrudController::class);
+Route::resource('beritasorotancrud', BeritaSorotanCrudController::class);

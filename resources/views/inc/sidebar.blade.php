@@ -98,29 +98,33 @@
 			<div class="sidebar-heading">Admin</div>
 			<div class="list-group list-group-flush">
 				<div class="dropdown">
-				<a href="{{route('admin.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Dashboard</a>
+					<a href="{{route('admin.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Dashboard</a>
 					<a class="list-group-item list-group-item-action bg-light dropdown-toggle" href="#" role="button" id="shortcutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 						Master Data
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
-						<li><a class="dropdown-item" href="{{route('bprcrud.index')}}">Bpr</a></li>
-						<li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Bank Umum</a></li>
+						<li><a class="dropdown-item" href="{{route('kategoriberitacrud.index')}}">Kategori</a></li>
+						<li><a class="dropdown-item" href="{{route('kategoriiklancrud.index')}}">Kategori Iklan</a></li>
+						<li><a class="dropdown-item" href="{{route('lamancrud.index')}}">Laman</a></li>
+						<li><a class="dropdown-item" href="{{route('bprcrud.index')}}"></a></li>
+						<!-- <li><a class="dropdown-item" href="{{route('bprcrud.index')}}">Bpr</a></li> -->
+						<!-- <li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Bank Umum</a></li>
 						<li><a class="dropdown-item" href="{{route('lkmcrud.index')}}">Lkm</a></li>
 						<li><a class="dropdown-item" href="{{route('koperasicrud.index')}}">Koperasi</a></li>
 						<li><a class="dropdown-item" href="{{route('investasicrud.index')}}">Investasi</a></li>
 						<li><a class="dropdown-item" href="{{route('bisniscrud.index')}}">Bisnis</a></li>
 						<li><a class="dropdown-item" href="{{route('industricrud.index')}}">Industri</a></li>
-						<li><a class="dropdown-item" href="{{route('umkmcrud.index')}}">Umkm</a></li>
+						<li><a class="dropdown-item" href="{{route('umkmcrud.index')}}">Umkm</a></li> -->
 					</ul>
 					<a class="list-group-item list-group-item-action bg-light dropdown-toggle" href="#" role="button" id="shortcutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 						Manage Berita
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
-						<li><a class="dropdown-item" href="{{route('bprcrud.index')}}">Berita</a></li>
-						<li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Beria Terpopuler</a></li>
-						<li><a class="dropdown-item" href="{{route('lkmcrud.index')}}">Berita Sorotan</a></li>
+						<li><a class="dropdown-item" href="{{route('beritasorotancrud.index')}}">Berita</a></li>
+						<li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Iklan</a></li>
+
 					</ul>
-					<a href="{{route('admin.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Iklan</a>
+					<a href="{{route('iklancrud.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Iklan</a>
 				</div>
 			</div>
 		</div>
