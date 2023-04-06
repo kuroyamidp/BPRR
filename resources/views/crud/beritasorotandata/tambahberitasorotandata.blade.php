@@ -1,6 +1,6 @@
 @extends('inc.sidebar')
 
-@section('title','Bank Umum Data')
+@section('title','Laman Berita Data')
 
 @section('container')
 

@@ -48,7 +48,7 @@ class LamanIklanCrudController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-            'kategberita_id' => 'required',
+            'kategiklan_id' => 'required',
             'tag' => 'required',
             'banner' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'content' => 'required',
@@ -67,7 +67,7 @@ class LamanIklanCrudController extends Controller
 
         IklanLaman::create([
             'title' => $request->title,
-            'kategberita_id' => $request->kategberita_id,
+            'kategiklan_id' => $request->kategiklan_id,
             'tag' => $request->tag,
             'banner' => $imageName,
             'content' => $request->content,
@@ -111,7 +111,7 @@ class LamanIklanCrudController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-            'kategberita_id' => 'required',
+            'kategiklan_id' => 'required',
             'tag' => 'required',
             'content' => 'required',
             'banner' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -131,7 +131,7 @@ class LamanIklanCrudController extends Controller
         
         IklanLaman::where('id', $id)->update([
             'title' => $request->title,
-            'kategberita_id' => $request->kategberita_id,
+            'kategiklan_id' => $request->kategiklan_id,
             'tag' => $request->tag,
             'content' => $request->content,
             'banner' => $imageName,

@@ -84,6 +84,7 @@ class BeritaSorotanCrudController extends Controller
      */
     public function show($id)
     {
+        $data['berita'] = KategoriBerita::get();
         $data['beritasorotancrud'] = BeritaSorotan::where('id', $id)->first();
         return view('crud.beritasorotandata.editberitasorotandata',$data);
     }
@@ -112,8 +113,8 @@ class BeritaSorotanCrudController extends Controller
             'title' => 'required',
             'kategberita_id' => 'required',
             'tag' => 'required',
+            'banner' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'content' => 'required',
-            'banner' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         
         if ($validator->fails()) {
@@ -121,22 +122,28 @@ class BeritaSorotanCrudController extends Controller
         }
         
         $image = $request->file('banner');
-        
         if ($image) {
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $path = public_path('/img');
             $image->move($path, $imageName);
+        
+            BeritaSorotan::where('id', $id)->update([
+                'title' => $request->title,
+                'kategberita_id' => $request->kategberita_id,
+                'tag' => $request->tag,
+                'banner' => $imageName,
+                'content' => $request->content,
+            ]);
+        } else {
+            BeritaSorotan::where('id', $id)->update([
+                'title' => $request->title,
+                'kategberita_id' => $request->kategberita_id,
+                'tag' => $request->tag,
+                'content' => $request->content,
+            ]);
         }
         
-        BeritaSorotan::where('id', $id)->update([
-            'title' => $request->title,
-            'kategberita_id' => $request->kategberita_id,
-            'tag' => $request->tag,
-            'content' => $request->content,
-            'banner' => $imageName,
-        ]);
-        
-        return redirect('/crud')->with('success', 'Berhasil tambah data');
+        return redirect('/beritasorotancrud')->with('success', 'Berhasil tambah data');
         
     }
 
