@@ -4,6 +4,10 @@
 
 @section('container')
 
+<head>
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <link href="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.css" rel="stylesheet">
+</head>
 <div class="layout-px-spacing">
 
     <div class="row layout-top-spacing">
@@ -66,7 +70,7 @@
                         <div class="row mb-1">
                             <div class="col-lg-10">
                                 <label for="form-control">Deskripsi</label>
-                                <textarea class="form-control" name="content">{{$beritasorotancrud['content']}}</textarea>
+                                <textarea class="form-control ckeditor" name="content">{{$beritasorotancrud['content']}}</textarea>
                                 @if($errors->has('content'))
                                 <div class="error" style="color: red; display:block;">
                                     {{ $errors->first('content') }}
@@ -86,4 +90,12 @@
     </div>
 
 </div>
+<script>
+    CKEDITOR.editorConfig = function( config ) {
+        config.autoParagraph = false;
+    };
+    CKEDITOR.replace('content', {
+        height: 200 
+    });
+</script>
 @endsection

@@ -121,7 +121,7 @@
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
 						<li><a class="dropdown-item" href="{{route('beritasorotancrud.index')}}">Berita</a></li>
-						<li><a class="dropdown-item" href="{{route('bankumumcrud.index')}}">Iklan</a></li>
+						<li><a class="dropdown-item" href="{{route('lamaniklancrud.index')}}">Iklan</a></li>
 
 					</ul>
 					<a href="{{route('iklancrud.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Iklan</a>

@@ -13,7 +13,7 @@ class IklanLaman extends Model
     protected $table = "iklan_lamen";
     protected $fillable = [
         'title',
-        'kategberita_id',
+        'kategiklan_id',
         'tag',
         'banner',
         'content',

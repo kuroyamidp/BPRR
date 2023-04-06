@@ -4,7 +4,8 @@
 
 @section('container')
 <head>
-<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <link href="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.css" rel="stylesheet">
 </head>
 <div class="layout-px-spacing">
 
@@ -61,7 +62,7 @@
                                     </div>
                                     @endif
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-6">
                                     <label for="form-control">Banner</label>
                                     <input type="file" name="banner" class="form-control">
                                     @if($errors->has('banner'))
@@ -70,9 +71,9 @@
                                     </div>
                                     @endif
                                 </div>
-                                <div class="col-lg-8">
+                                <div class="col-lg-9">
                                     <label for="form-control">Content</label>
-                                    <textarea class="form-control" name="content" >{{$lamancrud['content']}}</textarea>
+                                    <textarea class="form-control ckeditor" name="content" >{{$lamancrud['content']}}</textarea>
                                     @if($errors->has('content'))
                                     <div class="error" style="color: red; display:block;">
                                         {{ $errors->first('content') }}
@@ -92,4 +93,12 @@
     </div>
 
 </div>
+<script>
+    CKEDITOR.editorConfig = function( config ) {
+        config.autoParagraph = false;
+    };
+    CKEDITOR.replace('content', {
+        height: 200 
+    });
+</script>
 @endsection

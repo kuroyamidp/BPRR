@@ -110,4 +110,12 @@
 </div>
 
 </div>
+<script>
+    CKEDITOR.editorConfig = function( config ) {
+        config.autoParagraph = false;
+    };
+    CKEDITOR.replace('content', {
+        height: 200 
+    });
+</script>
 @endsection

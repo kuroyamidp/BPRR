@@ -65,7 +65,7 @@ class LamanIklanCrudController extends Controller
 
         $image->move($path, $imageName);
 
-        IklanLaman::create([
+        IklanLaman ::create([
             'title' => $request->title,
             'kategiklan_id' => $request->kategiklan_id,
             'tag' => $request->tag,
@@ -85,6 +85,7 @@ class LamanIklanCrudController extends Controller
      */
     public function show($id)
     {
+        $data['iklan'] = KategoriIklan::get();
         $data['lamaniklancrud'] = IklanLaman::where('id', $id)->first();
         return view('crud.lamaniklandata.editlamaniklandata',$data);
     }
@@ -113,8 +114,8 @@ class LamanIklanCrudController extends Controller
             'title' => 'required',
             'kategiklan_id' => 'required',
             'tag' => 'required',
+            'banner' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'content' => 'required',
-            'banner' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         
         if ($validator->fails()) {
@@ -122,22 +123,28 @@ class LamanIklanCrudController extends Controller
         }
         
         $image = $request->file('banner');
-        
         if ($image) {
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $path = public_path('/img');
             $image->move($path, $imageName);
+        
+            IklanLaman::where('id', $id)->update([
+                'title' => $request->title,
+                'kategiklan_id' => $request->kategiklan_id,
+                'tag' => $request->tag,
+                'banner' => $imageName,
+                'content' => $request->content,
+            ]);
+        } else {
+            IklanLaman::where('id', $id)->update([
+                'title' => $request->title,
+                'kategiklan_id' => $request->kategiklan_id,
+                'tag' => $request->tag,
+                'content' => $request->content,
+            ]);
         }
         
-        IklanLaman::where('id', $id)->update([
-            'title' => $request->title,
-            'kategiklan_id' => $request->kategiklan_id,
-            'tag' => $request->tag,
-            'content' => $request->content,
-            'banner' => $imageName,
-        ]);
-        
-        return redirect('/crud')->with('success', 'Berhasil tambah data');
+        return redirect('/lamaniklancrud')->with('success', 'Berhasil tambah data');
         
     }
 

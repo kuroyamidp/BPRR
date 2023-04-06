@@ -27,7 +27,7 @@ use App\Http\Controllers\Crud\KategoriBeritaCrudController;
 use App\Http\Controllers\Crud\KategoriIklanCrudController;
 use App\Http\Controllers\Crud\LamanCrudController;
 use App\Http\Controllers\Crud\BeritaSorotanCrudController;
-
+use App\Http\Controllers\Crud\LamanIklanCrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +70,4 @@ Route::resource('kategoriberitacrud', KategoriBeritaCrudController::class);
 Route::resource('kategoriiklancrud', KategoriIklanCrudController::class);
 Route::resource('lamancrud', LamanCrudController::class);
 Route::resource('beritasorotancrud', BeritaSorotanCrudController::class);
+Route::resource('lamaniklancrud', LamanIklanCrudController::class);
