@@ -16,6 +16,8 @@ class BeritaSorotan extends Model
         'kategberita_id',
         'tag',
         'banner',
+        'tanggal_mulai',
+        'tanggal_selesai',
         'content',
     ];
 
@@ -41,4 +43,5 @@ class BeritaSorotan extends Model
 
         return null;
     }
+    
 }

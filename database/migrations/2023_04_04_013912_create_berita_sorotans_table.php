@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->unsignedBigInteger('kategberita_id');
-            $table->text('tag');
+            $table->json('tag');
             $table->text('banner');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai');
             $table->text('content');
             $table->timestamps();
             $table->foreign('kategberita_id')->references('id')->on('kategori_beritas');

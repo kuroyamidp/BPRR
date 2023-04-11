@@ -45,7 +45,6 @@ class KategoriBeritaCrudController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'kategori' => 'required',
-            'status' => 'required',
         ]);
 
         // response error validation
@@ -55,7 +54,6 @@ class KategoriBeritaCrudController extends Controller
 
         KategoriBerita ::create([
             'kategori' => $request->kategori,
-            'status' => $request->status,
         ]);
 
         return redirect('/kategoriberitacrud')->with('success', 'Berhasil tambah data');
@@ -94,7 +92,6 @@ class KategoriBeritaCrudController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'kategori' => 'required',
-            'status' => 'required',
 
         ]);
 
@@ -105,7 +102,6 @@ class KategoriBeritaCrudController extends Controller
 
         KategoriBerita::where('id', $id)->update([
             'kategori' => $request->kategori,
-            'status' => $request->status,
         ]);
 
         return redirect('/kategoriberitacrud')->with('success', 'Berhasil tambah data');

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('kategiklan_id');
             $table->text('tag');
             $table->text('banner');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai');
             $table->text('content');
             $table->timestamps();
             $table->foreign('kategiklan_id')->references('id')->on('kategori_iklans');

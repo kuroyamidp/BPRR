@@ -16,6 +16,8 @@ class IklanLaman extends Model
         'kategiklan_id',
         'tag',
         'banner',
+        'tanggal_mulai',
+        'tanggal_selesai',
         'content',
     ];
 

@@ -72,6 +72,8 @@
                                         <th>Kategori</th>
                                         <th>Tag</th>
                                         <th>Gambar</th>
+                                        <th>Date</th>
+                                        <th>Date Expired</th>
                                         <th>Content</th>
                                         <th>Action</th>
 
@@ -85,6 +87,8 @@
                                         <td class="text-center">{{$value->nama_kateg_berita}}</td>
                                         <td class="text-center">{{$value->tag}}</td>
                                         <td class="text-center">{{$value->banner}}</td>
+                                        <td class="text-center">{{$value->tanggal_mulai}}</td>
+                                        <td class="text-center">{{$value->tanggal_selesai}}</td>
                                         <td class="text-center">{{$value->content}}</td>
                                         <td class="text-center" style="display: flex; justify-content: center;">
 

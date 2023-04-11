@@ -21,7 +21,7 @@
                         @csrf
                         @method('PUT')
                         <div class="row mb-1">
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <label for="form-control">Title</label>
                                 <input type="text" class="form-control" name="title" value="{{$beritasorotancrud['title']}}">
                                 @if($errors->has('title'))
@@ -48,16 +48,40 @@
                                 </div>
                                 @endif
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <label for="form-control">Tag</label>
-                                <input type="text" class="form-control" name="tag" value="{{$beritasorotancrud['tag']}}">
+                                <select class="form-control" name="tag">
+                                    <option value="">Pilih salah satu</option>
+                                    @foreach($beritasorotancrud as $key => $value)
+                                    @if($beritasorotancrud['tag'] == $value->id)
+                                    <option value="{{$value->id}}" selected>{{$value->tag}}</option>
+                                    @else
+                                    <option value="{{$value->id}}">{{$value->tag}}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                                 @if($errors->has('tag'))
                                 <div class="error" style="color: red; display:block;">
                                     {{ $errors->first('tag') }}
                                 </div>
                                 @endif
                             </div>
-                            <div class="col-lg-10">
+                            <!-- <div class="form-group">
+                                <label for="tag">Tag</label>
+                                <select class="form-control" name="tag[]" multiple>
+                                @foreach($beritasorotancrud as $item)
+                                <option value="{{ $item->id }}" {{ in_array($item->id, $item->tags) ? 'selected' : '' }}>{{ $item->tags }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('tag'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('tag') }}</strong>
+                                </span>
+                                @endif
+                            </div> -->
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-4">
                                 <label for="form-control">Gambar</label>
                                 <input type="file" name="banner" class="form-control">
                                 @if($errors->has('banner'))
@@ -66,9 +90,27 @@
                                 </div>
                                 @endif
                             </div>
+                            <div class="col-lg-4">
+                                <label for="form-control">Date</label>
+                                <input type="date" name="tanggal_mulai" class="form-control" placeholder="dd-mm-yyyy" value="{{$beritasorotancrud['tanggal_mulai']}}">
+                                @if($errors->has('tanggal_mulai'))
+                                <div class="error" style="color: red; display:block;">
+                                    {{ $errors->first('tanggal_mulai') }}
+                                </div>
+                                @endif
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="form-control">Date Expired</label>
+                                <input type="date" name="tanggal_selesai" class="form-control" placeholder="dd-mm-yyyy" value="{{$beritasorotancrud['tanggal_selesai']}}">
+                                @if($errors->has('tanggal_selesai'))
+                                <div class="error" style="color: red; display:block;">
+                                    {{ $errors->first('tanggal_selesai') }}
+                                </div>
+                                @endif
+                            </div>
                         </div>
                         <div class="row mb-1">
-                            <div class="col-lg-10">
+                            <div class="col-lg-12">
                                 <label for="form-control">Deskripsi</label>
                                 <textarea class="form-control ckeditor" name="content">{{$beritasorotancrud['content']}}</textarea>
                                 @if($errors->has('content'))
@@ -91,11 +133,11 @@
 
 </div>
 <script>
-    CKEDITOR.editorConfig = function( config ) {
+    CKEDITOR.editorConfig = function(config) {
         config.autoParagraph = false;
     };
     CKEDITOR.replace('content', {
-        height: 200 
+        height: 200
     });
 </script>
 @endsection

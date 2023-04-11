@@ -34,7 +34,8 @@ class LamanIklanCrudController extends Controller
      */
     public function create()
     {
-        $data['lamaniklancrud'] = KategoriIklan::get();
+        $data['kategori'] = KategoriIklan::get();
+        $data['iklans'] = IklanLaman::get();
         return view('crud.lamaniklandata.tambahlamaniklandata',$data);
     }
 
@@ -51,11 +52,13 @@ class LamanIklanCrudController extends Controller
             'kategiklan_id' => 'required',
             'tag' => 'required',
             'banner' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
             'content' => 'required',
         ]);
 
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $image = $request->file('banner');
@@ -65,12 +68,15 @@ class LamanIklanCrudController extends Controller
 
         $image->move($path, $imageName);
 
-        IklanLaman ::create([
+        IklanLaman::create([
             'title' => $request->title,
             'kategiklan_id' => $request->kategiklan_id,
-            'tag' => $request->tag,
             'banner' => $imageName,
+            'tanggal_mulai' => $request->tanggal_mulai,
+            'tanggal_selesai' => $request->tanggal_selesai,
             'content' => $request->content,
+            'tag' => implode(',', $request->tag)
+
         ]);
         
 
@@ -86,7 +92,10 @@ class LamanIklanCrudController extends Controller
     public function show($id)
     {
         $data['iklan'] = KategoriIklan::get();
-        $data['lamaniklancrud'] = IklanLaman::where('id', $id)->first();
+        $data['iklantag'] = IklanLaman::where('id', $id)->get();
+        foreach ($data['lamaniklancrud'] as $key => $value){
+            $value-> tags = explode(',', $value-> tags);
+        }
         return view('crud.lamaniklandata.editlamaniklandata',$data);
     }
 

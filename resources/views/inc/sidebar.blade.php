@@ -124,7 +124,7 @@
 						<li><a class="dropdown-item" href="{{route('lamaniklancrud.index')}}">Iklan</a></li>
 
 					</ul>
-					<a href="{{route('iklancrud.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Iklan</a>
+					<!-- <a href="{{route('iklancrud.index')}}" class="list-group-item list-group-item-action bg-light dashboard">Iklan</a> -->
 				</div>
 			</div>
 		</div>
