@@ -121,6 +121,7 @@
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="shortcutDropdown">
 						<li><a class="dropdown-item" href="{{route('beritasorotancrud.index')}}">Berita</a></li>
+						<li><a class="dropdown-item" href="{{route('sorotancrud.index')}}">Berita Sorotan</a></li>
 						<li><a class="dropdown-item" href="{{route('lamaniklancrud.index')}}">Iklan</a></li>
 
 					</ul>

@@ -1,6 +1,6 @@
 @extends('inc.sidebar')
 
-@section('title','Kategori Berita Data')
+@section('title','sorotan Data')
 
 @section('container')
 <head>
@@ -22,7 +22,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header" style="background-color: white;">
-                <a href="{{Route('kategoriberitacrud.create')}}" class="btn btn-primary btn-sm">Tambah</a>
+                <a href="{{Route('sorotancrud.create')}}" class="btn btn-primary btn-sm">Tambah</a>
                     <!-- Modal -->
                     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -67,22 +67,25 @@
                             <table class="table table-hover" id="default-ordering">
                                 <thead>
                                     <tr class="text-center">
-                                    <th>No</th>
-                                    <th style="position: relative; left: 100px;">Kategori</th>
-                                    <th style="position: relative; left: 100px;">Action</th>
-
+                                    <th>Nomor</th>
+                                    <th>Judul</th>
+                                        <th>Tanggal Mulai</th>
+                                        <th>Tanggal Selesai</th>
+                                        <th>Perubahan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($kategoriberitacrud as $key => $value)
-                                    <tr class="text-center">
+                                @foreach($sorotancrud as $key => $value)
+                                    <tr>
                                         <td width="1%">{{$key + 1}}</td>
-                                        <td  style="position: relative; left: 100px;">{{$value->kategori}}</td>
-                                        <td  style="display: flex; justify-content: center; position: relative; left: 100px;">
+                                        <td class="text-center">{{$value->nama_title_berita}}</td>
+                                        <td class="text-center">{{$value->tanggal_mulai}}</td>
+                                        <td class="text-center">{{$value->tanggal_selesai}}</td>
+                                        <td class="text-center" style="display: flex; justify-content: center;">
 
-                                            <a href=" {{ route('kategoriberitacrud.show', $value->id) }}" class="btn btn-warning mb-1 mr-1 rounded-circle" data-toggle="tooltip" title='Update'><i class="fas fa-edit"></i></a>
+                                            <a href=" {{ route('sorotancrud.show', $value->id) }}" class="btn btn-warning mb-1 mr-1 rounded-circle" data-toggle="tooltip" title='Update'><i class="fas fa-edit"></i></a>
 
-                                            <form action="{{ route('kategoriberitacrud.destroy', $value->id) }}" method="post">
+                                            <form action="{{ route('sorotancrud.destroy', $value->id) }}" method="post">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button class="btn btn-danger mb-1 mr-1 rounded-circle show_confirm" data-toggle="tooltip" title='Delete' type="submit"><i class="fas fa-trash-alt"></i></button>

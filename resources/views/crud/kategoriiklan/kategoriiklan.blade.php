@@ -65,20 +65,21 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <table class="table table-hover" id="default-ordering">
-                                <thead>
+                            <thead>
                                     <tr class="text-center">
                                     <th>No</th>
-                                        <th>Kategori</th>
-                                        <th>Action</th>
+                                    <th style="position: relative; left: 100px;">Kategori</th>
+                                    <th style="position: relative; left: 100px;">Action</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($kategoriiklancrud as $key => $value)
                                     <tr>
+                                    <tr class="text-center">
                                         <td width="1%">{{$key + 1}}</td>
-                                        <td class="text-center">{{$value->kategori}}</td>
-                                        <td class="text-center" style="display: flex; justify-content: center;">
+                                        <td  style="position: relative; left: 100px;">{{$value->kategori}}</td>
+                                        <td  style="display: flex; justify-content: center; position: relative; left: 100px;">
 
                                             <a href=" {{ route('kategoriiklancrud.show', $value->id) }}" class="btn btn-warning mb-1 mr-1 rounded-circle" data-toggle="tooltip" title='Update'><i class="fas fa-edit"></i></a>
 
